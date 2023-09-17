@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="850.0" maxWidth="450.0" minHeight="750.0" minWidth="450.0" prefHeight="750.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.TetrisController">
+   <children>
+      <GridPane maxWidth="450.0" prefHeight="750.0" prefWidth="450.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="450.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="450.0" minHeight="10.0" prefHeight="450.0" vgrow="SOMETIMES" />  
+          <RowConstraints maxHeight="300.0" minHeight="100.0" prefHeight="400.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="bak" maxWidth="450.0" prefHeight="450.0" prefWidth="450.0">
+               <children>
+                  <Pane layoutX="280.0" prefHeight="100.0" prefWidth="170.0">
+                     <children>
+                        <Text layoutX="19.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="2.0" text="Score:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Roboto Bold Italic" size="24.0" />
+                           </font>
+                        </Text>
+                           <Label fx:id="myLabel" layoutX="100.0" layoutY="17.0" prefHeight="65.0" prefWidth="88.0" text="Label" textFill="BLACK">
+                           <font>
+                              <Font name="Roboto Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               <Pane fx:id="space" prefHeight="450.0" prefWidth="450.0" />
+                  <Pane fx:id="warning" layoutX="85.0" layoutY="200.0" prefHeight="130.0" prefWidth="280.0" />
+                  <Pane fx:id="display" layoutX="100.0" layoutY="100.0" prefHeight="300.0" prefWidth="250.0" />
+               </children>
+            </Pane>
+            <Pane maxWidth="450.0" prefHeight="300.0" prefWidth="450.0" GridPane.rowIndex="1">
+               <children>
+                  <Button layoutX="174.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleRotatePiece" text="Rotate" />
+                  <Button layoutX="178.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleDown" text="Down" />
+                  <Button layoutX="275.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleRight" text="Right" />
+                  <Button layoutX="104.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleLeft" text="Left" />
+                  <Button layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onAction="#handlePaused" text="Play/Pause" />
+                  <Button layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleReset" text="Reset" />
+                  <Button layoutX="354.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+                   
+                  <Pane fx:id="input" layoutX="106.0" layoutY="125.0" prefHeight="51.0" prefWidth="239.0" />
+                  <Button layoutX="353.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleLoad" text="Load" />
+                  <Button layoutX="154.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleDisplay" text="HighScore" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
